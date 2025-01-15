@@ -1,4 +1,4 @@
-const { ctl_dias } = require('../models/index');
+const { ctl_dia } = require('../models/index');
 const { request, response } = require('express');
 const {
     notFoundResponse,
@@ -8,7 +8,7 @@ const {
 const { ValidationError, where } = require('sequelize');
 
 const getDiasList = async (req = request, res = response) => {
-    const dias = await ctl_dias.findAll({
+    const dias = await ctl_dia.findAll({
         order: [["id", "ASC"]],
     });
     return res.status(200).json(dias);
@@ -16,7 +16,7 @@ const getDiasList = async (req = request, res = response) => {
 
 const getDiaById = async (req = request, res = response) => {
     const id = req.params.id;
-    const dia = await ctl_dias.findOne({
+    const dia = await ctl_dia.findOne({
         where: { id },
     });
     if (dia == null) {
@@ -29,7 +29,7 @@ const crearDia = async (req = request, res = response) => {
     const { dia } = req.body;
     let nuevoDia;
     try {
-        nuevoDia = await ctl_dias.create({
+        nuevoDia = await ctl_dia.create({
             dia,
         });
     } catch (error) {
@@ -41,7 +41,7 @@ const crearDia = async (req = request, res = response) => {
 const updateDia = async (req = request, res = response) => {
     const { dia } = req.body;
     const id = req.params.id;
-    const diaExistente = await ctl_dias.findByPk(id);
+    const diaExistente = await ctl_dia.findByPk(id);
     if (diaExistente == null) {
         return notFoundResponse(res, 'El día que busca no fue encontrado');
     }
@@ -54,7 +54,7 @@ const updateDia = async (req = request, res = response) => {
 
 const deleteDia = async (req = request, res = response) => {
     const id = req.params.id;
-    const dia = await ctl_dias.findByPk(id);
+    const dia = await ctl_dia.findByPk(id);
     if (dia == null) {
         return notFoundResponse(res, 'Día no encontrado');
     }

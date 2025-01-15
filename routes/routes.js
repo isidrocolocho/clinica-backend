@@ -10,6 +10,7 @@ const usuariosRoutes = require("./usuarioRoutes");
 const rolesRoutes = require("./rolRoutes"); 
 const mntTipoRegistroRoutes = require("./mntTipoRegistroRoutes")
 const diaRoutes = require("./diaRoutes")
+const mntEspecialidadRoutes = require("./mntEspecialidadRoutes")
 
 const app = express();
 app.use(logger('dev'));
@@ -22,6 +23,7 @@ app.use("/usuarios", usuariosRoutes);
 app.use("/roles", rolesRoutes); 
 app.use("/tipo/registro", mntTipoRegistroRoutes); 
 app.use("/dia", diaRoutes); 
+app.use("/especialidad", mntEspecialidadRoutes); 
 
 app.get('*',(req, res) => 
     res.status(200).send({message: "Bienvenido a API con nodejs",}),

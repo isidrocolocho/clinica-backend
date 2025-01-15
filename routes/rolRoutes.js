@@ -5,7 +5,8 @@ const {
     getRolById,
     crearRol,
     updateRol,
-    deleteRol
+    deleteRol,
+    activarRol
 } = require("../controllers/rolesController");
 
 const authMiddleware = require("../middlewares/authMiddleware");
@@ -17,6 +18,6 @@ router.get("/:id",getRolById);
 router.post("/",crearRol);
 router.put("/:id",updateRol);
 router.delete("/:id",deleteRol);
-router.get("/activar/:id",deleteRol);
+router.get("/activar/:id",activarRol);
 
 module.exports= router;
