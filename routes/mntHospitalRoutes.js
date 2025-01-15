@@ -7,7 +7,7 @@ const {
     updateHospital,
     deleteHospital,
     activarHospital
-} = require("../controllers/rolesController");
+} = require("../controllers/mntHospitalController");
 
 const authMiddleware = require("../middlewares/authMiddleware");
 
