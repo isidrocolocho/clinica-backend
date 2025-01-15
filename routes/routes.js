@@ -14,6 +14,7 @@ const mntEspecialidadRoutes = require("./mntEspecialidadRoutes")
 const mntHospitalRoutes = require("./mntHospitalRoutes")
 const mntMedicoRoutes = require("./mntMedicoRoutes")
 const mntHorarioAtencionRoutes = require("./mntHorarioAtencionRoutes")
+const mntServicioRoutes = require("./mntServicioRoutes")
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/especialidad", mntEspecialidadRoutes);
 app.use("/hospital", mntHospitalRoutes); 
 app.use("/medico", mntMedicoRoutes); 
 app.use("/horario/atencion", mntHorarioAtencionRoutes); 
+app.use("/servicio", mntServicioRoutes); 
 
 app.get('*',(req, res) => 
     res.status(200).send({message: "Bienvenido a API con nodejs",}),

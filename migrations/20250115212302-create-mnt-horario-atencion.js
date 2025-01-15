@@ -51,7 +51,11 @@ module.exports = {
         type: Sequelize.DATE,
         comment: 'Timestamp para eliminación suave (soft delete)'
       }
+    },
+    {
+      comment: 'Tabla que almacena la información de los horarios de atencion medica del sistema.' // Comentario para la tabla
     });
+    
     await queryInterface.addConstraint('mnt_horario_atenciones', {
       fields: ['id_medico'],
       type: 'foreign key',
