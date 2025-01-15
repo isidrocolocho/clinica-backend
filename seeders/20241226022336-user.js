@@ -99,6 +99,24 @@ module.exports = {
       },
       {
         id: 5,
+        username: 'DoctorJohn2',
+        email: 'doctor2.john@example.com',
+        password: hashedTesterPassword,
+        nombres: 'Sidee',
+        apellido: 'hon',
+        foto_perfil: null,
+        descripcion: 'Médico general con experiencia en medicina interna',
+        token: null,
+        is_active: true,
+        numero_telefono: '5535-0004',
+        fecha_nacimiento: '1985-06-15',
+        id_user_created: 1,
+        id_tipo_registro: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 6,
         username: 'PatientJane',
         email: 'patient.jane@example.com',
         password: hashedTesterPassword,
@@ -115,9 +133,6 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       }
-      
-      
-      
     ]);
   },
 
