@@ -11,14 +11,17 @@ const {
 const {validationError} = require("sequelize");
 
 const getUsuariosList = async (req=request, res= response) =>{
-    const users = await user.findAll({order:["id"]});
+    const users = await user.findAll({
+        attributes: ['id', 'username', 'email', 'is_active', 'createdAt'], // Selección de columnas
+        order: [['id', 'ASC']], // Ordenar por 'id' en orden ascendente
+      });
     return res.status(200).json(users);
 }
 
 const getUsuarioById = async (req=request, res= response) =>{
     const id = req.params.id;
     const usuario = await user.findByPk(id,{
-        attributes: { exclude : ["password"]}, // excluye contraseña 
+        attributes: ['id', 'username', 'email', 'is_active', 'createdAt'], // Selección de columnas
     });
     if(user===null){
         return notFoundResponse(res,"Usuario no encontrado");

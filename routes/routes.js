@@ -8,6 +8,8 @@ const errorHandler = require("../middlewares/errorHandler");
 const authRoutes = require("./authRoutes"); 
 const usuariosRoutes = require("./usuarioRoutes"); 
 const rolesRoutes = require("./rolRoutes"); 
+const mntTipoRegistroRoutes = require("./mntTipoRegistroRoutes")
+const diaRoutes = require("./diaRoutes")
 
 const app = express();
 app.use(logger('dev'));
@@ -18,6 +20,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use("/auth", authRoutes); 
 app.use("/usuarios", usuariosRoutes); 
 app.use("/roles", rolesRoutes); 
+app.use("/tipo/registro", mntTipoRegistroRoutes); 
+app.use("/dia", diaRoutes); 
+
 app.get('*',(req, res) => 
     res.status(200).send({message: "Bienvenido a API con nodejs",}),
 );

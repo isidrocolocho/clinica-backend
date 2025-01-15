@@ -99,5 +99,6 @@ module.exports = {
     getRolById,
     crearRol,
     updateRol,
-    deleteRol
+    deleteRol,
+    activarRol
 }
