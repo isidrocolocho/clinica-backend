@@ -31,6 +31,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        estado: "Ocupada",
+        color: "#324323", 
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 

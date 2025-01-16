@@ -21,16 +21,21 @@ module.exports = {
         comment: 'Color representativo del estado de pago en formato hexadecimal o nombre',
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        comment: 'Fecha de creación del registro',
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
+        comment: 'Timestamp de creación del registro',
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        comment: 'Fecha de última actualización del registro',
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
+        comment: 'Timestamp de la última actualización del registro',
+      },
+      deletedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+        comment: 'Timestamp para eliminación suave (soft delete)',
       },
     },
     {
