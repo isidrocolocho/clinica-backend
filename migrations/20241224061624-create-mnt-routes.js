@@ -53,7 +53,7 @@ module.exports = {
         },
         id_ruta_padre: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: true,
           references: {
             model: 'mnt_routes',
             key: 'id'
