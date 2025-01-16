@@ -32,7 +32,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        id_medico: 3,
+        id_medico: 2,
         id_user: 4,
         id_estado_agenda: 2,
         fecha_hora_consulta: new Date('2025-01-21T15:00:00Z'),

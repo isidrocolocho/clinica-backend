@@ -103,10 +103,10 @@ module.exports = {
     });
 
     // Agregar las restricciones de claves foráneas
-    await queryInterface.addConstraint('mnt_agenda_medica', {
+    await queryInterface.addConstraint('mnt_agenda_medicas', {
       fields: ['id_medico'],
       type: 'foreign key',
-      name: 'fk_mnt_agenda_medica_id_medico',
+      name: 'fk_mnt_agenda_medicas_id_medico',
       references: {
         table: 'mnt_medicos',
         field: 'id',
@@ -115,10 +115,10 @@ module.exports = {
       onUpdate: 'CASCADE',
     });
 
-    await queryInterface.addConstraint('mnt_agenda_medica', {
+    await queryInterface.addConstraint('mnt_agenda_medicas', {
       fields: ['id_user'],
       type: 'foreign key',
-      name: 'fk_mnt_agenda_medica_id_user',
+      name: 'fk_mnt_agenda_medicas_id_user',
       references: {
         table: 'users',
         field: 'id',
@@ -127,10 +127,10 @@ module.exports = {
       onUpdate: 'CASCADE',
     });
 
-    await queryInterface.addConstraint('mnt_agenda_medica', {
+    await queryInterface.addConstraint('mnt_agenda_medicas', {
       fields: ['id_estado_agenda'],
       type: 'foreign key',
-      name: 'fk_mnt_agenda_medica_id_estado_agenda',
+      name: 'fk_mnt_agenda_medicas_id_estado_agenda',
       references: {
         table: 'ctl_estado_agendas',
         field: 'id',
@@ -139,10 +139,10 @@ module.exports = {
       onUpdate: 'CASCADE',
     });
 
-    await queryInterface.addConstraint('mnt_agenda_medica', {
+    await queryInterface.addConstraint('mnt_agenda_medicas', {
       fields: ['id_estado_pago'],
       type: 'foreign key',
-      name: 'fk_mnt_agenda_medica_id_estado_pago',
+      name: 'fk_mnt_agenda_medicas_id_estado_pago',
       references: {
         table: 'ctl_estado_pagos',
         field: 'id',
