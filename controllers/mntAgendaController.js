@@ -8,7 +8,7 @@ const getAgendasList = async (req = request, res = response) => {
         const agendas = await mnt_agenda_medica.findAll({
             include: [
                 { model: mnt_medico, as: 'medico' },
-                { model: user, as: 'usuario' },
+                { model: user, as: 'user' }, // Cambiar 'user' a 'user'
                 { model: ctl_estado_agenda, as: 'estadoAgenda' },
                 { model: ctl_estado_pago, as: 'estadoPago' },
             ],
@@ -16,6 +16,7 @@ const getAgendasList = async (req = request, res = response) => {
         });
         return res.status(200).json(agendas);
     } catch (error) {
+        console.log(error)
         return conflictResponse(res, 'Error al obtener la lista de agendas médicas');
     }
 };
@@ -28,7 +29,7 @@ const getAgendaById = async (req = request, res = response) => {
             where: { id },
             include: [
                 { model: mnt_medico, as: 'medico' },
-                { model: user, as: 'usuario' },
+                { model: user, as: 'user' },
                 { model: ctl_estado_agenda, as: 'estadoAgenda' },
                 { model: ctl_estado_pago, as: 'estadoPago' },
             ],

@@ -14,6 +14,7 @@ const getServiciosList = async (req = request, res = response) => {
         });
         return res.status(200).json(servicios);
     } catch (error) {
+        console.log(error)
         return conflictResponse(res, 'Error al obtener la lista de servicios');
     }
 };

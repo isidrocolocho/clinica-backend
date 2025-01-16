@@ -47,6 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     id_user: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      
       //comment: 'Identificador del usuario asociado',
     },
     id_estado_agenda: {
