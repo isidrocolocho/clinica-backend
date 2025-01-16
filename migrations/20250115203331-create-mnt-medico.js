@@ -57,13 +57,13 @@ module.exports = {
         defaultValue: true,
         comment: 'Indicates if the medico is active'
       },
-      created_at: {
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.NOW,
         comment: 'Fecha de creación del registro'
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.NOW,

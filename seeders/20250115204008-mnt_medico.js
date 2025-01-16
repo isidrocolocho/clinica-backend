@@ -20,8 +20,8 @@ module.exports = {
         numero_junta: 'JUNTA001',
         precio_consulta: 200.00,
         tiempo_consulta: 30,
-        created_at: new Date(),
-        updated_at: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         id_user: 5,
@@ -30,8 +30,8 @@ module.exports = {
         numero_junta: 'JUNTA002',
         precio_consulta: 250.00,
         tiempo_consulta: 45,
-        created_at: new Date(),
-        updated_at: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ], {});
   },

@@ -11,15 +11,18 @@ const getMedicosList = async (req = request, res = response) => {
                 is_active: true, // Suponiendo que hay un campo is_active en la tabla
             },
             include: [
-                { model: user, as: 'user' },
+                { model: user, as: 'user' }, // Debe coincidir con el alias en belongsTo
                 { model: mnt_especialidad, as: 'especialidad' },
                 { model: mnt_hospital, as: 'hospital' },
-            ],
+            ],            
             order: [["id", "ASC"]],
         });
+        console.log(medicos);
+        
         return res.status(200).json(medicos);
     } catch (error) {
-        return conflictResponse(res, 'Error al obtener la lista de médicos');
+        console.log('error:',error)
+        return conflictResponse(res, 'Error al obtener la lista de médicos', error);
     }
 };
 

@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'mnt_especialidad',
+        model: 'mnt_especialidades',
         key: 'id',
       },
     },
@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'mnt_hospital',
+        model: 'mnt_hospitales',
         key: 'id',
       },
     },
