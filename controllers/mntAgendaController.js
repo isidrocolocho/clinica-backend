@@ -1,4 +1,4 @@
-const { mnt_agenda_medica, mnt_medico, user, mnt_estado_agenda, mnt_estado_pago } = require('../models/index');
+const { mnt_agenda_medica, mnt_medico, user, ctl_estado_agenda, ctl_estado_pago } = require('../models/index');
 const { request, response } = require('express');
 const { notFoundResponse, conflictResponse } = require('../utils/responseUtils');
 
@@ -9,8 +9,8 @@ const getAgendasList = async (req = request, res = response) => {
             include: [
                 { model: mnt_medico, as: 'medico' },
                 { model: user, as: 'usuario' },
-                { model: mnt_estado_agenda, as: 'estadoAgenda' },
-                { model: mnt_estado_pago, as: 'estadoPago' },
+                { model: ctl_estado_agenda, as: 'estadoAgenda' },
+                { model: ctl_estado_pago, as: 'estadoPago' },
             ],
             order: [["fecha_hora_consulta", "ASC"]],
         });
@@ -29,8 +29,8 @@ const getAgendaById = async (req = request, res = response) => {
             include: [
                 { model: mnt_medico, as: 'medico' },
                 { model: user, as: 'usuario' },
-                { model: mnt_estado_agenda, as: 'estadoAgenda' },
-                { model: mnt_estado_pago, as: 'estadoPago' },
+                { model: ctl_estado_agenda, as: 'estadoAgenda' },
+                { model: ctl_estado_pago, as: 'estadoPago' },
             ],
         });
 
