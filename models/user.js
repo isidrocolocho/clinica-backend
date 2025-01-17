@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'id_tipo_registro',
         as: 'tipoRegistro'
       });
+      // this.hasMany(models.permissions, {
+      //   through: models.rol_permission,
+      //   sourceKey: 'id',
+      //   foreignKey: 'id_rol',
+      // });
     }
   }
   user.init({
@@ -75,7 +80,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     id_user_created: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'users',
         key: 'id',

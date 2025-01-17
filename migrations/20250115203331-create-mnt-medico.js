@@ -21,20 +21,22 @@ module.exports = {
       },
       id_especialidad: {
         type: Sequelize.INTEGER,
+        allowNull: true,
+        defaultValue: null,
         references: {
           model: 'mnt_especialidades', // Tabla referenciada
           key: 'id', // Columna de referencia
         },
-        allowNull: false,
         comment: 'ID de la especialidad del médico'
       },
       id_hospital: {
         type: Sequelize.INTEGER,
+        allowNull: true,
+        defaultValue: null,
         references: {
           model: 'mnt_hospitales', // Tabla referenciada
           key: 'id', // Columna de referencia
         },
-        allowNull: false,
         comment: 'ID del hospital asociado al médico'
       },
       numero_junta: {
